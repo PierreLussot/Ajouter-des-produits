@@ -16,17 +16,31 @@
             <a href="index.php" class="index php">Ajouter un produit</a>
             <h3>Liste des produits</h3>
             <div class="liste-produits">
+                <?php
+                require 'connexion_bdd.php';
+                $req3 = mysqli_query($connexion, "SELECT * FROM produit ");
+                if (mysqli_num_rows($req3) == 0) {
+                    echo '<p style="color: red;">Aucun article trouvé</p>';
+                }
+
+                while ($row = mysqli_fetch_assoc($req3)) {
+                ?>
+                    <div class="produit">
+                        <div class="image-prod">
+                            <img src="image_bdd/<?= $row['image'] ?>" alt="">
+                        </div>
+                        <div class="text"> <strong>
+                                <p class="titre"><?= $row['titre'] ?></p>
+                            </strong>
+                            <p class="description"><?= $row['description'] ?></p>
+                        </div>
+                    </div>
+                <?php
+                }
+
+                ?>
                 <!-- Produits -->
-                <div class="produit">
-                    <div class="image-prod">
-                        <img src="test.jpg" alt="">
-                    </div>
-                    <div class="text"> <strong>
-                            <p class="titre">Test</p>
-                        </strong>
-                        <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae veniam libero provident eveniet voluptatum, ex molestias quam ab dicta eligendi, quo ducimus, id iste excepturi doloribus magnam velit explicabo quaerat.</p>
-                    </div>
-                </div>
+
 
             </div>
         </div>
