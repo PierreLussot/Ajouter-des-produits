@@ -13,7 +13,7 @@
 <body>
     <div class="result">
         <div class="result-content">
-            <a href="" class="index php">Ajouter un produit</a>
+            <a href="index.php" class="index php">Ajouter un produit</a>
             <h3>Liste des produits</h3>
             <div class="liste-produits">
                 <!-- Produits -->
@@ -27,7 +27,7 @@
                         <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae veniam libero provident eveniet voluptatum, ex molestias quam ab dicta eligendi, quo ducimus, id iste excepturi doloribus magnam velit explicabo quaerat.</p>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
